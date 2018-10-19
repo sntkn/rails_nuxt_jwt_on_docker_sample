@@ -1,0 +1,34 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgsql-data:/var/lib/postgresql/data
+  backend:
+    build:
+      context: backend
+      args:
+        UID: ${UID:-1001}
+    volumes:
+      - ./backend:/usr/src/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    user: rails
+  frontend:
+    build:
+      context: frontend
+      args:
+        UID: ${UID:-1001}
+    volumes:
+      - ./frontend:/usr/src/app
+    ports:
+      - "3000:3000"
+    user: frontend
+
+volumes:
+  pgsql-data:
+    driver: local
