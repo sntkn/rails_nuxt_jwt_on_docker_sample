@@ -1,0 +1,28 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "tsurumi <tsurumi@estore.co.jp>",
+  "private": true,
+  "scripts": {
+    "dev": "HOST=0.0.0.0 /usr/src/app/node_modules/nuxt/bin/nuxt",
+    "build": "/usr/src/app/node_modules/nuxt/bin/nuxt build",
+    "start": "/usr/src/app/node_modules/nuxt/bin/nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "yarn run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.5.2",
+    "@nuxtjs/axios": "^5.3.3",
+    "@nuxtjs/vuetify": "^0.4.3",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
